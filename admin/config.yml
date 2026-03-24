@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: FeRoRin/portfolio   # ← Change to your GitHub username/repo
-  branch: main
+  branch: master
 
 media_folder: "public/images"
 public_folder: "/images"

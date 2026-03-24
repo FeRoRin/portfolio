@@ -1,6 +1,5 @@
 backend:
-  name: github
-  repo: FeRoRin/portfolio   # ← Change to your GitHub username/repo
+  name: git-gateway
   branch: master
 
 media_folder: "public/images"

@@ -1,0 +1,47 @@
+backend:
+  name: github
+  repo: FeRoRin/portfolio   # ← Change to your GitHub username/repo
+  branch: main
+
+media_folder: "public/images"
+public_folder: "/images"
+
+collections:
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Tag", name: "tag", widget: "string" }
+      - { label: "Reading time", name: "readTime", widget: "string" }
+      - { label: "Emoji", name: "emoji", widget: "string" }
+      - { label: "Excerpt", name: "excerpt", widget: "text" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - label: "Profile"
+        name: "profile"
+        file: "content/profile.json"
+        fields:
+          - { label: "Name", name: "name", widget: "string" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Location", name: "location", widget: "string" }
+          - { label: "Bio", name: "bio", widget: "text" }
+          - { label: "Open to work", name: "openToWork", widget: "boolean" }
+
+  - name: "projects"
+    label: "Projects"
+    folder: "content/projects"
+    create: true
+    fields:
+      - { label: "Name", name: "title", widget: "string" }
+      - { label: "Type", name: "type", widget: "select", options: ["open", "client", "wip"] }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Tags (comma-separated)", name: "tags", widget: "string" }
+      - { label: "GitHub URL", name: "github", widget: "string", required: false }
+      - { label: "Live URL", name: "live", widget: "string", required: false }
